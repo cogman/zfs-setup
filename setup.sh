@@ -15,6 +15,8 @@ while read -r record; do
   sgdisk -n3:0:0      -t3:BF00 "$record"
 done < disks
 
+echo 'Setting up bpool'
+
 zpool create \
     -o cachefile=/etc/zfs/zpool.cache \
     -o ashift=13 -o autotrim=on -d \
@@ -33,4 +35,4 @@ zpool create \
     -O devices=off -O normalization=formD -O relatime=on -O xattr=sa \
     -O mountpoint=/boot -R /mnt \
     -f bpool raidz2 \
-    $(cat bpoolPart)
+    `cat bpoolPart`
