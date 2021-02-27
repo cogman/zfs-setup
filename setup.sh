@@ -33,4 +33,4 @@ zpool create \
     -O devices=off -O normalization=formD -O relatime=on -O xattr=sa \
     -O mountpoint=/boot -R /mnt \
     -f bpool raidz2 \
-    "$(cat bpoolPart)"
+    $(cat bpoolPart)
