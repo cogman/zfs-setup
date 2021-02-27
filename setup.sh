@@ -17,7 +17,7 @@ done < disks
 
 zpool create \
     -o cachefile=/etc/zfs/zpool.cache \
-    -o ashift=12 -o autotrim=on -d \
+    -o ashift=13 -o autotrim=on -d \
     -o feature@async_destroy=enabled \
     -o feature@bookmarks=enabled \
     -o feature@embedded_data=enabled \
