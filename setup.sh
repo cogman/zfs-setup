@@ -1,7 +1,7 @@
 UUID=t77my4
 DISK=/dev/disk/by-id/scsi-SATA_Samsung_SSD_870_S5VWNG0NB01146K
 
-apt update && apt upgrade
+apt update && apt upgrade --yes
 gsettings set org.gnome.desktop.media-handling automount false
 
 apt install --yes debootstrap gdisk zfs-initramfs zfs-zed
